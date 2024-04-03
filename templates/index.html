@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Recommendation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F2F2F2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 20px;
+            color: #555555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #FFD900; /* Yellow color associated with taxis */
+            color: #000000;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FFB500; /* Slightly darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ride Recommendation</h1>
+
+    <form action="/recommend" method="post">
+        <label for="origin">Pickup Location:</label>
+        <select name="origin" required>
+            <option value="Haymarket Square">Haymarket Square</option>
+            <option value="Back Bay">Back Bay</option>
+            <option value="North End">North End</option>
+            <option value="North Station">North Station</option>
+            <option value="Beacon Hill">Beacon Hill</option>
+            <option value="Boston University">Boston University</option>
+            <option value="Fenway">Fenway</option>
+            <option value="South Station">South Station</option>
+            <option value="Theatre District">Theatre District</option>
+            <option value="West End">West End</option>
+            <option value="Financial District">Financial District</option>
+            <option value="Northeastern University">Northeastern University</option>
+        </select><br>
+
+        <label for="destination">Drop-off Location:</label>
+        <select name="destination" required>
+            <option value="Haymarket Square">Haymarket Square</option>
+            <option value="Back Bay">Back Bay</option>
+            <option value="North End">North End</option>
+            <option value="North Station">North Station</option>
+            <option value="Beacon Hill">Beacon Hill</option>
+            <option value="Boston University">Boston University</option>
+            <option value="Fenway">Fenway</option>
+            <option value="South Station">South Station</option>
+            <option value="Theatre District">Theatre District</option>
+            <option value="West End">West End</option>
+            <option value="Financial District">Financial District</option>
+            <option value="Northeastern University">Northeastern University</option>
+        </select><br>
+
+        <label for="day_of_week">Day of the Week:</label>
+        <select name="day_of_week" required>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select><br>
+
+        <label for="hour">Hour of the Day (0-23):</label>
+        <input type="number" name="hour" min="0" max="23" required><br>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>

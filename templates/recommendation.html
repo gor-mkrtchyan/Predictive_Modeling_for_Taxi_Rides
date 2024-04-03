@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F2F2F2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .recommendation-section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffffff; /* Light yellow background */
+            border: 2px solid #666666;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-category {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .recommendation {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555555;
+        }
+
+        .suggestion {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFD900; /* Yellow color for the suggestion */
+        }
+
+        a {
+            color: #FFD900;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recommendation Result</h1>
+
+    {% for section in result %}
+        <div class="recommendation-section">
+            <div class="car-category">{{ section['car_category'] }}</div>
+
+            {% for recommendation in section['recommendations'] %}
+                <div class="recommendation">{{ recommendation }}</div>
+            {% endfor %}
+
+            <div class="suggestion">{{ section['suggestion'] }}</div>
+        </div>
+    {% endfor %}
+
+    <a href="/">Go Back</a>
+</body>
+</html>
